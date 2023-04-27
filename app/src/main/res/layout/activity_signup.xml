@@ -2,10 +2,9 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/signedI"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    tools:context=".SignupActivity">
 
     <ImageView
         android:id="@+id/rectangleBackground"
@@ -37,7 +36,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="50dp"
         android:background="@drawable/rounded_grey_button"
         android:hint="Password"
@@ -47,15 +46,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/emailEditText" />
 
-    <Switch
-        android:id="@+id/staySignedInSwitch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <EditText
+        android:id="@+id/confirmPasswordEditText"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="40dp"
-        android:text="Stay signed in"
-        android:thumbTint="@color/switch_thumb_color"
-        android:trackTint="@color/switch_track_color"
+        android:layout_marginEnd="50dp"
+        android:background="@drawable/rounded_grey_button"
+        android:hint="Confirm Password"
+        android:inputType="textPassword"
+        android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passwordEditText" />
 
@@ -64,11 +67,11 @@
         android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:text="Log In"
-        android:textStyle="bold"
+        android:text="Sign up"
         android:textSize="18dp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/staySignedInSwitch" />
+        app:layout_constraintTop_toBottomOf="@+id/confirmPasswordEditText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
