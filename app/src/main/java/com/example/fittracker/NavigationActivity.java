@@ -2,7 +2,9 @@ package com.example.fittracker;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
@@ -31,5 +33,16 @@ public class NavigationActivity extends AppCompatActivity {
         Button viewButton = findViewById(R.id.viewButton);
         Animation breathingAnimation4 = AnimationUtils.loadAnimation(this, R.anim.breathing_animation);
         viewButton.startAnimation(breathingAnimation4);
+
+        // Buttons for switching activites
+        Button enterInfoButton = findViewById(R.id.enterInfoButton);
+
+        enterInfoButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(NavigationActivity.this, EnterInfoActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

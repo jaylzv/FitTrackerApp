@@ -12,6 +12,15 @@
         android:theme="@style/Theme.FitTracker"
         tools:targetApi="31">
         <activity
+            android:name=".EnterFoodActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EnterExerciseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EnterInfoActivity"
+            android:exported="false" />
+        <activity
             android:name=".NavigationActivity"
             android:exported="false" />
         <activity
