@@ -35,12 +35,18 @@ public class NavigationActivity extends AppCompatActivity {
         viewButton.startAnimation(breathingAnimation4);
 
         // Buttons for switching activites
-        Button enterInfoButton = findViewById(R.id.enterInfoButton);
-
-        enterInfoButton.setOnClickListener(new View.OnClickListener() {
+        infoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(NavigationActivity.this, EnterInfoActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        FAQbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(NavigationActivity.this, FaqActivity.class);
                 startActivity(intent);
             }
         });

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".FaqActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/firstQuestionBackground"
+            android:layout_width="367dp"
+            android:layout_height="59dp"
+            android:layout_marginTop="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/rounded_red_button" />
+
+        <TextView
+            android:id="@+id/firstQuestionText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:text="What is fit tracker?"
+            android:textColor="#ffffff"
+            android:textSize="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/firstAnswerBackground"
+            android:layout_width="367dp"
+            android:layout_height="165dp"
+            android:layout_marginTop="110dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/rounded_lighter_red_button" />
+
+        <TextView
+            android:id="@+id/firstAnswerText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="70dp"
+            android:text="FitTracker is a comprehensive fitness app\n
+designed to help users track their workouts,\n
+monitor their progress, and achieve their\n
+fitness goals. With a wide range of features,\n
+including exercise tracking, nutrition guidance,\n
+and personalized goal-setting, FitTracker is\n
+your all-in-one solution for a healthier lifestyle.\n"
+            android:textColor="#ffffff"
+            android:textSize="16dp"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/firstQuestionBackground" />
+
+        <ImageView
+            android:id="@+id/secondQuestionBackground"
+            android:layout_width="367dp"
+            android:layout_height="59dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/firstAnswerBackground"
+            app:srcCompat="@drawable/rounded_red_button" />
+
+        <TextView
+            android:id="@+id/secondQuestionText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Can I track my nutrition and calories\nwith
+FitTracker?"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:textSize="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/firstAnswerBackground" />
+
+        <ImageView
+            android:id="@+id/secondAnswerBackground"
+            android:layout_width="367dp"
+            android:layout_height="90dp"
+            android:layout_marginTop="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.363"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/secondQuestionBackground"
+            app:srcCompat="@drawable/rounded_lighter_red_button" />
+
+        <TextView
+            android:id="@+id/secondAnswerText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="70dp"
+            android:text="Yes, FitTracker offers a built-in nutrition\n
+tracking feature that allows you to log your\n
+meals, track your caloric intake, and monitor\n
+your macro and micronutrient consumption."
+            android:textColor="#ffffff"
+            android:textSize="16dp"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/secondQuestionBackground" />
+
+        <ImageView
+            android:id="@+id/thirdQuestionBackground"
+            android:layout_width="367dp"
+            android:layout_height="59dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/secondAnswerBackground"
+            app:srcCompat="@drawable/rounded_red_button" />
+
+        <TextView
+            android:id="@+id/thirdQuestionText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="Is my data secure with FitTracker?"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:textSize="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/secondAnswerBackground" />
+
+        <ImageView
+            android:id="@+id/thirdAnswerBackground"
+            android:layout_width="367dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.363"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/thirdQuestionBackground"
+            app:srcCompat="@drawable/rounded_lighter_red_button" />
+
+        <TextView
+            android:id="@+id/thirdAnswerText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="70dp"
+            android:text="Yes, we at FitTracker employ\n
+industry-standard encryption and security\n
+measures to protect your personal information.\n"
+            android:textColor="#ffffff"
+            android:textSize="16dp"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/thirdQuestionBackground" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
