@@ -167,6 +167,112 @@ measures to protect your personal information.\n"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/thirdQuestionBackground" />
+
+        <ImageView
+            android:id="@+id/fourthQuestionBackground"
+            android:layout_width="367dp"
+            android:layout_height="59dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/thirdAnswerBackground"
+            app:srcCompat="@drawable/rounded_red_button" />
+
+        <TextView
+            android:id="@+id/fourthQuestionText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="Where can I download FitTracker?"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:textSize="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/thirdAnswerBackground" />
+
+        <ImageView
+            android:id="@+id/fourthAnswerBackground"
+            android:layout_width="367dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.363"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fourthQuestionBackground"
+            app:srcCompat="@drawable/rounded_lighter_red_button" />
+
+        <TextView
+            android:id="@+id/fourthAnswerText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="70dp"
+            android:text="Currently the app is\n
+only avaliable on the Android Play Store."
+            android:textColor="#ffffff"
+            android:textSize="16dp"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fourthQuestionBackground" />
+
+        <ImageView
+            android:id="@+id/fifthQuestionBackground"
+            android:layout_width="367dp"
+            android:layout_height="59dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fourthAnswerBackground"
+            app:srcCompat="@drawable/rounded_red_button" />
+
+        <TextView
+            android:id="@+id/fifthQuestionText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="What should I do if I need help\n
+or have questions about using FitTracker?"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:textSize="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fourthAnswerBackground" />
+
+        <ImageView
+            android:id="@+id/fifthAnswerBackground"
+            android:layout_width="367dp"
+            android:layout_height="135dp"
+            android:layout_marginTop="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.363"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fifthQuestionBackground"
+            app:srcCompat="@drawable/rounded_lighter_red_button" />
+
+        <TextView
+            android:id="@+id/fifthAnswerText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="70dp"
+            android:text="If you need assistance or have\n
+questions about FitTracker, check the\n
+app's help center or user guide for\n
+detailed information on its features and functionality.\n
+You can also contact the FitTracker\n
+support team for personalized assistance."
+            android:textColor="#ffffff"
+            android:textSize="16dp"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fifthQuestionBackground" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.core.widget.NestedScrollView>
