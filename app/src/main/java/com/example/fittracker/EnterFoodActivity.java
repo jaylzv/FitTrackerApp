@@ -3,13 +3,21 @@ package com.example.fittracker;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+
+import java.lang.reflect.Type;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.util.ArrayList;
 
 public class EnterFoodActivity extends AppCompatActivity {
 
@@ -40,14 +48,35 @@ public class EnterFoodActivity extends AppCompatActivity {
                 double proteins = Double.parseDouble(proteinsEditText.getText().toString());
                 double fats = Double.parseDouble(fatsEditText.getText().toString());
 
-                Intent intent = new Intent(EnterFoodActivity.this, ViewFoodActivity.class);
-                intent.putExtra("name", name);
-                intent.putExtra("calories", calories);
-                intent.putExtra("carbohydrates", carbohydrates);
-                intent.putExtra("proteins", proteins);
-                intent.putExtra("fats", fats);
-                startActivity(intent);
+                Food newFood = new Food(name, calories, carbohydrates, proteins, fats);
+                saveFoodData(newFood);
+
+                // Clear the input fields after saving the food data
+                nameEditText.setText("");
+                caloriesEditText.setText("");
+                carbohydratesEditText.setText("");
+                proteinsEditText.setText("");
+                fatsEditText.setText("");
             }
         });
+    }
+
+    private void saveFoodData(Food newFood) {
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        Gson gson = new Gson();
+        String json = sharedPreferences.getString("food_list", null);
+        Type type = new TypeToken<ArrayList<Food>>(){}.getType();
+        ArrayList<Food> foodList = gson.fromJson(json, type);
+
+        if (foodList == null) {
+            foodList = new ArrayList<>();
+        }
+
+        foodList.add(newFood);
+
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        json = gson.toJson(foodList);
+        editor.putString("food_list", json);
+        editor.apply();
     }
 }

@@ -50,5 +50,13 @@ public class NavigationActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        viewButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(NavigationActivity.this, ViewInfoActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
