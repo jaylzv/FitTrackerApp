@@ -3,13 +3,22 @@ package com.example.fittracker;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.List;
 
 public class EnterExerciseActivity extends AppCompatActivity {
 
@@ -38,13 +47,35 @@ public class EnterExerciseActivity extends AppCompatActivity {
                 int reps = Integer.parseInt(repsEditText.getText().toString());
                 double weight = Double.parseDouble(weightEditText.getText().toString());
 
-                Intent intent = new Intent(EnterExerciseActivity.this, ViewExerciseActivity.class);
-                intent.putExtra("name", name);
-                intent.putExtra("sets", sets);
-                intent.putExtra("reps", reps);
-                intent.putExtra("weight", weight);
-                startActivity(intent);
+                // Create an Exercise object
+                Exercise exercise = new Exercise(name, sets, reps, weight);
+
+                // Save the exercise data
+                saveExerciseData(exercise);
+                nameEditText.setText("");
+                setsEditText.setText("");
+                repsEditText.setText("");
+                weightEditText.setText("");
             }
         });
+    }
+
+    private void saveExerciseData(Exercise exercise) {
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        Gson gson = new Gson();
+        String json = sharedPreferences.getString("exercise_list", null);
+        Type type = new TypeToken<ArrayList<Exercise>>(){}.getType();
+        List<Exercise> exerciseList = gson.fromJson(json, type);
+
+        if (exerciseList == null) {
+            exerciseList = new ArrayList<>();
+        }
+
+        exerciseList.add(exercise);
+
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        json = gson.toJson(exerciseList);
+        editor.putString("exercise_list", json);
+        editor.apply();
     }
 }
