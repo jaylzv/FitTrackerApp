@@ -2,6 +2,7 @@ package com.example.fittracker;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -62,9 +63,10 @@ public class EnterFoodActivity extends AppCompatActivity {
     }
 
     private void saveFoodData(Food newFood) {
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences sharedPreferences = getSharedPreferences("MyApp", Context.MODE_PRIVATE);
         Gson gson = new Gson();
-        String json = sharedPreferences.getString("food_list", null);
+        String email = sharedPreferences.getString("email", null);
+        String json = sharedPreferences.getString(email + "_food_list", null);
         Type type = new TypeToken<ArrayList<Food>>(){}.getType();
         ArrayList<Food> foodList = gson.fromJson(json, type);
 
@@ -76,7 +78,7 @@ public class EnterFoodActivity extends AppCompatActivity {
 
         SharedPreferences.Editor editor = sharedPreferences.edit();
         json = gson.toJson(foodList);
-        editor.putString("food_list", json);
+        editor.putString(email + "_food_list", json);
         editor.apply();
     }
 }

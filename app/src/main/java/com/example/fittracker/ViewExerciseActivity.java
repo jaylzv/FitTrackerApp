@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -29,21 +30,39 @@ public class ViewExerciseActivity extends AppCompatActivity {
         rvExerciseList = findViewById(R.id.rv_exercise_list);
         rvExerciseList.setLayoutManager(new LinearLayoutManager(this));
 
-        loadExerciseData();
+        // WHENEVER WE DELTE SOMETHING TO MAKE SURE IT STAYS DELETED AKA LOAD THE DELETED ITEMS
+        // Initialize SharedPreferences
+        SharedPreferences preferences = getSharedPreferences("MyApp", Context.MODE_PRIVATE);
+        String email = preferences.getString("email", null);
+        Gson gson = new Gson();
+
+        // Initialize exerciseList from SharedPreferences
+        ArrayList<Exercise> exerciseList;
+        String json = preferences.getString(email + "_exercise_list", null);
+        Type type = new TypeToken<ArrayList<Exercise>>() {}.getType();
+        if (json == null) {
+            // If there is no data in SharedPreferences, initialize exerciseList as an empty list
+            exerciseList = new ArrayList<>();
+        } else {
+            // Otherwise, load the data from SharedPreferences
+            exerciseList = gson.fromJson(json, type);
+        }
+        // END OF LINE OF CODE
 
         exerciseAdapter = new ExerciseAdapter(exerciseList, this);
         rvExerciseList.setAdapter(exerciseAdapter);
     }
 
-    private void loadExerciseData() {
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        Gson gson = new Gson();
-        String json = sharedPreferences.getString("exercise_list", null);
-        Type type = new TypeToken<ArrayList<Exercise>>(){}.getType();
-        exerciseList = gson.fromJson(json, type);
-
-        if (exerciseList == null) {
-            exerciseList = new ArrayList<>();
-        }
-    }
+    // private void loadExerciseData() {
+    //     SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+    //     Gson gson = new Gson();
+    //     String email = sharedPreferences.getString("email", null);
+    //     String json = sharedPreferences.getString(email + "_exercise_list", null);
+    //     Type type = new TypeToken<ArrayList<Exercise>>(){}.getType();
+    //     exerciseList = gson.fromJson(json, type);
+    // 
+    //     if (exerciseList == null) {
+    //         exerciseList = new ArrayList<>();
+    //     }
+    // }
 }

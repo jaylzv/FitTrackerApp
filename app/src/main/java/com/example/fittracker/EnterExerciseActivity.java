@@ -2,6 +2,7 @@ package com.example.fittracker;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -61,9 +62,9 @@ public class EnterExerciseActivity extends AppCompatActivity {
     }
 
     private void saveExerciseData(Exercise exercise) {
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        Gson gson = new Gson();
-        String json = sharedPreferences.getString("exercise_list", null);
+        SharedPreferences sharedPreferences = getSharedPreferences("MyApp", Context.MODE_PRIVATE);        Gson gson = new Gson();
+        String email = sharedPreferences.getString("email", null);
+        String json = sharedPreferences.getString(email + "_exercise_list", null);
         Type type = new TypeToken<ArrayList<Exercise>>(){}.getType();
         List<Exercise> exerciseList = gson.fromJson(json, type);
 
@@ -75,7 +76,7 @@ public class EnterExerciseActivity extends AppCompatActivity {
 
         SharedPreferences.Editor editor = sharedPreferences.edit();
         json = gson.toJson(exerciseList);
-        editor.putString("exercise_list", json);
+        editor.putString(email + "_exercise_list", json);
         editor.apply();
     }
 }
