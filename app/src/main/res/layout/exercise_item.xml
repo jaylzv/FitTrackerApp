@@ -19,6 +19,7 @@
             android:layout_height="wrap_content"
             android:textSize="18sp"
             android:textStyle="bold"
+            android:textColor="@color/black"
             tools:text="Exercise Name" />
 
         <LinearLayout
@@ -34,6 +35,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textSize="14sp"
+                android:textColor="#444444"
                 tools:text="Sets: 3" />
 
             <TextView
@@ -42,6 +44,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textSize="14sp"
+                android:textColor="#444444"
                 tools:text="Reps: 10" />
 
             <TextView
@@ -50,6 +53,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textSize="14sp"
+                android:textColor="#444444"
                 tools:text="Weight: 50 kg" />
 
         </LinearLayout>

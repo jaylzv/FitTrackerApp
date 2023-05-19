@@ -12,6 +12,15 @@
         android:theme="@style/Theme.FitTracker"
         tools:targetApi="31">
         <activity
+            android:name=".SearchTrainerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SearchProgrammeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SearchActivity"
+            android:exported="false" />
+        <activity
             android:name=".ViewFoodActivity"
             android:exported="false" />
         <activity
