@@ -9,13 +9,15 @@ public class Trainer {
     private String surname;
     private String telephone;
     private String type;
+    private String email;
 
-    public Trainer(String name, String surname, String telephone, String type) {
+    public Trainer(String name, String surname, String telephone, String type, String email) {
         this.id = UUID.randomUUID().toString();
         this.name = name;
         this.surname = surname;
         this.telephone = telephone;
         this.type = type;
+        this.email = email;
     }
 
     public void giveFeedback() {
@@ -64,5 +66,13 @@ public class Trainer {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

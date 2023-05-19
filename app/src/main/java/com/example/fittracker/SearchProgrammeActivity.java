@@ -47,17 +47,17 @@ public class SearchProgrammeActivity extends AppCompatActivity {
         }
 
         // FOR NOW WE ARE GOING TO HAVE HARDCODED IN PROGRAMMES
-        programmeList.add(new Programme("Hemsworth training", "7 weeks", "140EUR", new Trainer("Chris", "Hemsworth", "0123", "Movie Star")));
-        programmeList.add(new Programme("Gymnastics Mastery", "10 weeks", "200EUR", new Trainer("Simone", "Biles", "1234", "Athlete")));
-        programmeList.add(new Programme("Powerlifting Pro", "12 weeks", "180EUR", new Trainer("Hafthor", "Bjornsson", "5678", "Strength Athlete")));
-        programmeList.add(new Programme("Marathon Training", "16 weeks", "150EUR", new Trainer("Eliud", "Kipchoge", "9012", "Athlete")));
-        programmeList.add(new Programme("Yoga Flow", "8 weeks", "120EUR", new Trainer("Adriene", "Mishler", "3456", "Yoga Instructor")));
-        programmeList.add(new Programme("Muay Thai Warrior", "10 weeks", "220EUR", new Trainer("Buakaw", "Banchamek", "7890", "Martial Arts Instructor")));
-        programmeList.add(new Programme("CrossFit Challenge", "6 weeks", "180EUR", new Trainer("Mat", "Fraser", "2468", "CrossFit Athlete")));
-        programmeList.add(new Programme("Pilates Sculpt", "8 weeks", "160EUR", new Trainer("Cassey", "Ho", "1357", "Pilates Instructor")));
-        programmeList.add(new Programme("Cycling Endurance", "12 weeks", "200EUR", new Trainer("Eddy", "Merckx", "8642", "Cycling Coach")));
-        programmeList.add(new Programme("Kickboxing Fusion", "10 weeks", "190EUR", new Trainer("Cristiane", "Justino", "9753", "Martial Arts Instructor")));
-        programmeList.add(new Programme("Functional Fitness", "10 weeks", "170EUR", new Trainer("Rich", "Froning", "6249", "CrossFit Athlete")));
+        programmeList.add(new Programme("Hemsworth training", "7 weeks", "140EUR", new Trainer("Chris", "Hemsworth", "0123", "Movie Star", "chris.hemsworth@example.com")));
+        programmeList.add(new Programme("Gymnastics Mastery", "10 weeks", "200EUR", new Trainer("Simone", "Biles", "1234", "Athlete", "simone.biles@example.com")));
+        programmeList.add(new Programme("Powerlifting Pro", "12 weeks", "180EUR", new Trainer("Hafthor", "Bjornsson", "5678", "Strength Athlete", "hafthor.bjornsson@example.com")));
+        programmeList.add(new Programme("Marathon Training", "16 weeks", "150EUR", new Trainer("Eliud", "Kipchoge", "9012", "Athlete", "eliud.kipchoge@example.com")));
+        programmeList.add(new Programme("Yoga Flow", "8 weeks", "120EUR", new Trainer("Adriene", "Mishler", "3456", "Yoga Instructor", "adriene.mishler@example.com")));
+        programmeList.add(new Programme("Muay Thai Warrior", "10 weeks", "220EUR", new Trainer("Buakaw", "Banchamek", "7890", "Martial Arts Instructor", "buakaw.banchamek@example.com")));
+        programmeList.add(new Programme("CrossFit Challenge", "6 weeks", "180EUR", new Trainer("Mat", "Fraser", "2468", "CrossFit Athlete", "mat.fraser@example.com")));
+        programmeList.add(new Programme("Pilates Sculpt", "8 weeks", "160EUR", new Trainer("Cassey", "Ho", "1357", "Pilates Instructor", "cassey.ho@example.com")));
+        programmeList.add(new Programme("Cycling Endurance", "12 weeks", "200EUR", new Trainer("Eddy", "Merckx", "8642", "Cycling Coach", "eddy.merckx@example.com")));
+        programmeList.add(new Programme("Kickboxing Fusion", "10 weeks", "190EUR", new Trainer("Cristiane", "Justino", "9753", "Martial Arts Instructor", "cristiane.justino@example.com")));
+        programmeList.add(new Programme("Functional Fitness", "10 weeks", "170EUR", new Trainer("Rich", "Froning", "6249", "CrossFit Athlete", "rich.froning@example.com")));
 
         programmeAdapter = new ProgrammeAdapter(programmeList, this);
         rvProgrammeList.setAdapter(programmeAdapter);

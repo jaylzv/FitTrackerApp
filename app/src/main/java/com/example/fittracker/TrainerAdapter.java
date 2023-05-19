@@ -34,6 +34,7 @@ public class TrainerAdapter extends RecyclerView.Adapter<TrainerAdapter.ViewHold
         holder.tvTrainerName.setText(Trainer.getName() + " " + Trainer.getSurname());
         holder.tvTelephone.setText("Telephone: " + Trainer.getTelephone());
         holder.tvType.setText("Type: " + Trainer.getType());
+        holder.tvEmail.setText("Email: " + Trainer.getEmail());
     }
 
     @Override
@@ -45,12 +46,14 @@ public class TrainerAdapter extends RecyclerView.Adapter<TrainerAdapter.ViewHold
         TextView tvTrainerName;
         TextView tvTelephone;
         TextView tvType;
+        TextView tvEmail;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             tvTrainerName = itemView.findViewById(R.id.tv_trainer_name);
             tvTelephone = itemView.findViewById(R.id.tv_telephone_number);
             tvType = itemView.findViewById(R.id.tv_type);
+            tvEmail = itemView.findViewById(R.id.tv_email);
         }
     }
 }

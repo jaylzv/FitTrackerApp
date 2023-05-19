@@ -21,37 +21,33 @@
             android:textSize="18sp"
             android:textStyle="bold" />
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/tv_type"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:orientation="horizontal"
-            android:weightSum="3">
+            android:text="Type: Conditioning coach"
+            android:textColor="#444444"
+            android:textSize="14sp" />
 
-            <TextView
-                android:id="@+id/tv_type"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Type: Conditioning coach"
-                android:textColor="#444444"
-                android:textSize="14sp" />
+        <TextView
+            android:id="@+id/tv_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Email: email@email.com"
+            android:textColor="#444444"
+            android:textSize="14sp" />
 
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_weight="1" />
+        <TextView
+            android:id="@+id/tv_telephone_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Telephone: 0123"
+            android:textColor="#444444"
+            android:textSize="14sp" />
 
-            <TextView
-                android:id="@+id/tv_telephone_number"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Telephone: 0123"
-                android:textColor="#444444"
-                android:textSize="14sp" />
-
-        </LinearLayout>
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>
