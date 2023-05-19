@@ -8,12 +8,14 @@ public class Trainer {
     private String name;
     private String surname;
     private String telephone;
+    private String type;
 
-    public Trainer(String name, String surname, String telephone) {
+    public Trainer(String name, String surname, String telephone, String type) {
         this.id = UUID.randomUUID().toString();
         this.name = name;
         this.surname = surname;
         this.telephone = telephone;
+        this.type = type;
     }
 
     public void giveFeedback() {
@@ -54,5 +56,13 @@ public class Trainer {
 
     public void setTelephone(String telephone) {
         this.telephone = telephone;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }

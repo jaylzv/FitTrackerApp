@@ -20,7 +20,7 @@ public class ProgrammeAdapter extends RecyclerView.Adapter<ProgrammeAdapter.View
         this.programmeList = programmeList;
         this.context = context;
     }
-    
+
     @Override
     @NonNull
     public ProgrammeAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
