@@ -13,12 +13,19 @@ import java.util.List;
 
 public class ProgrammeAdapter extends RecyclerView.Adapter<ProgrammeAdapter.ViewHolder> {
 
+    public interface OnProgrammeClickListener {
+        void onProgrammeClick(Programme programme);
+    }
+
+    private OnProgrammeClickListener onProgrammeClickListener;
+
     private List<Programme> programmeList;
     private Context context;
 
-    public ProgrammeAdapter(List<Programme> programmeList, Context context) {
+    public ProgrammeAdapter(List<Programme> programmeList, Context context, OnProgrammeClickListener onProgrammeClickListener) {
         this.programmeList = programmeList;
         this.context = context;
+        this.onProgrammeClickListener = onProgrammeClickListener;
     }
 
     @Override
@@ -35,6 +42,13 @@ public class ProgrammeAdapter extends RecyclerView.Adapter<ProgrammeAdapter.View
         holder.tvPrice.setText("Price: " + programme.getPrice());
         holder.tvDuration.setText("Duration: " + programme.getDuration());
         holder.tvTrainerName.setText("Trainer Name: " + programme.getTrainer().getName() + " " + programme.getTrainer().getSurname());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onProgrammeClickListener.onProgrammeClick(programme);
+            }
+        });
     }
 
     @Override

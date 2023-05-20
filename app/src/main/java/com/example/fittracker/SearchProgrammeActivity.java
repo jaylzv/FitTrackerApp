@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
@@ -59,7 +60,14 @@ public class SearchProgrammeActivity extends AppCompatActivity {
         programmeList.add(new Programme("Kickboxing Fusion", "10 weeks", "190EUR", new Trainer("Cristiane", "Justino", "9753", "Martial Arts Instructor", "cristiane.justino@example.com")));
         programmeList.add(new Programme("Functional Fitness", "10 weeks", "170EUR", new Trainer("Rich", "Froning", "6249", "CrossFit Athlete", "rich.froning@example.com")));
 
-        programmeAdapter = new ProgrammeAdapter(programmeList, this);
+        programmeAdapter = new ProgrammeAdapter(programmeList, this, new ProgrammeAdapter.OnProgrammeClickListener() {
+            @Override
+            public void onProgrammeClick(Programme programme) {
+                Intent intent = new Intent(SearchProgrammeActivity.this, ProgrammeDetailActivity.class);
+                intent.putExtra("Programme", programme);
+                startActivity(intent);
+            }
+        });
         rvProgrammeList.setAdapter(programmeAdapter);
     }
 }

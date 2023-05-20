@@ -1,8 +1,9 @@
 package com.example.fittracker;
 
+import java.io.Serializable;
 import java.util.UUID;
 
-public class Trainer {
+public class Trainer implements Serializable {
 
     private String id;
     private String name;
