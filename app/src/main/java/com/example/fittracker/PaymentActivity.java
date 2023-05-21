@@ -1,5 +1,6 @@
 package com.example.fittracker;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -26,11 +27,16 @@ public class PaymentActivity extends AppCompatActivity {
         editCardCVV = findViewById(R.id.edit_card_cvv);
         submitButton = findViewById(R.id.button_submit);
 
+        Programme programme = (Programme) getIntent().getSerializableExtra("Programme");
+
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(validate()){
-                    // Continue with payment processing
+                    Toast.makeText(PaymentActivity.this, "Programme successfully bought!", Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(PaymentActivity.this, SearchProgrammeActivity.class);
+                    intent.putExtra("Programme", programme);
+                    startActivity(intent);
                 }
             }
         });
