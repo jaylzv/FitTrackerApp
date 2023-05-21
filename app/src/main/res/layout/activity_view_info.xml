@@ -9,25 +9,38 @@
     <Button
         android:id="@+id/viewExerciseButton"
         android:layout_width="150dp"
-        android:layout_height="500dp"
+        android:layout_height="350dp"
+        android:layout_marginTop="70dp"
         android:layout_marginEnd="30dp"
+        android:backgroundTint="#222222"
         android:text="View\nExercise"
         android:textSize="22dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/viewFoodButton"
         android:layout_width="150dp"
-        android:layout_height="500dp"
+        android:layout_height="350dp"
         android:layout_marginStart="30dp"
+        android:layout_marginTop="70dp"
+        android:backgroundTint="#222222"
         android:text="View\nFood"
         android:textSize="22dp"
         android:textStyle="bold"
-        android:backgroundTint="#222222"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/viewProgrammesButton"
+        android:layout_width="360dp"
+        android:layout_height="200dp"
+        android:layout_marginBottom="70dp"
+        android:text="View Programmes"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

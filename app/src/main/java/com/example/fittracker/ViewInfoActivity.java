@@ -25,6 +25,10 @@ public class ViewInfoActivity extends AppCompatActivity {
         Animation breathingAnimation2 = AnimationUtils.loadAnimation(this, R.anim.breathing_animation);
         viewFoodButton.startAnimation(breathingAnimation2);
 
+        Button viewProgrammesButton = findViewById(R.id.viewProgrammesButton);
+        Animation breathingAnimation3 = AnimationUtils.loadAnimation(this, R.anim.breathing_animation);
+        viewProgrammesButton.startAnimation(breathingAnimation3);
+
         // Switching activites
         viewExerciseButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,6 +43,15 @@ public class ViewInfoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ViewInfoActivity.this, ViewFoodActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        // Switching activites
+        viewProgrammesButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ViewInfoActivity.this, ViewProgrammesActivity.class);
                 startActivity(intent);
             }
         });
